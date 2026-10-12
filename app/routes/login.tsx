@@ -1,4 +1,4 @@
-import { useFetcher } from "react-router";
+import { redirect, useFetcher } from "react-router";
 import type { Route } from "./+types/login";
 
 export async function action({ request }: Route.ActionArgs) {
@@ -9,9 +9,8 @@ export async function action({ request }: Route.ActionArgs) {
     //consultar meu DB ou API externa para login
 
     await new Promise((resolve) => setTimeout(resolve, 3000))
-    return {
-        ok: true
-    }
+    
+    return redirect("/loaders")
 }
 
 export default function Login({actionData}: Route.ComponentProps) {
@@ -33,8 +32,6 @@ export default function Login({actionData}: Route.ComponentProps) {
                                 type="email"
                                 id="email"
                                 name="email"
-                                required
-                                value="esdrasdaniel1016@gmail.com"
                                 className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-600 placeholder-gray-400 text-white bg-gray-700 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                             />
                         </div>
@@ -44,8 +41,6 @@ export default function Login({actionData}: Route.ComponentProps) {
                                 type="password"
                                 id="password"
                                 name="password"
-                                required
-                                value="123456789"
                                 className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-600 placeholder-gray-400 text-white bg-gray-700 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                             />
                         </div>
