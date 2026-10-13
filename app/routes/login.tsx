@@ -24,7 +24,7 @@ export async function action({ request }: Route.ActionArgs) {
 
     await new Promise((resolve) => setTimeout(resolve, 3000))
 
-    return redirect("/loaders")
+    return redirect("/breweries")
 }
 
 export default function Login({ actionData }: Route.ComponentProps) {
