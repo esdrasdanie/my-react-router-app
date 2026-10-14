@@ -30,5 +30,8 @@ export async function getBrewery(id: string) {
     )
     const brewery = (await response.json()) as Brewery
 
+    throw new Error("No bee for you");
+    
+
     return brewery
 }
