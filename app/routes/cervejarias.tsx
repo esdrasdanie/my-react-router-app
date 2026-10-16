@@ -20,7 +20,7 @@ export default function ({ loaderData }: Route.ComponentProps) {
   <ul className='space-y-6'>
     {loaderData.breweries.map((brewery) => (
       <li key={brewery.id} className='border-b'>
-        <Link to={`/cervejarias/${brewery.id}`}>{brewery.name}</Link>
+        <Link prefetch='intent' to={`/cervejarias/${brewery.id}`}>{brewery.name}</Link>
       </li>
     ))}
   </ul>

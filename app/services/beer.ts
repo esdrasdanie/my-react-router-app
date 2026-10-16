@@ -29,8 +29,6 @@ export async function getBrewery(id: string) {
         `https://api.openbrewerydb.org/v1/breweries/${id}`
     )
     const brewery = (await response.json()) as Brewery
-
-    throw new Error("No bee for you");
     
 
     return brewery
