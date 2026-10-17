@@ -20,7 +20,7 @@ export type Brewery = {
 export async function getBreweries() {
     const response = await fetch("https://api.openbrewerydb.org/v1/breweries");
     const breweries = (await response.json()) as Brewery[]
-    
+
     return breweries
 }
 
@@ -30,6 +30,5 @@ export async function getBrewery(id: string) {
     )
     const brewery = (await response.json()) as Brewery
     
-
     return brewery
 }
